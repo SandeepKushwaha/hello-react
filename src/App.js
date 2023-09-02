@@ -3,11 +3,18 @@ import './App.css';
 
 function App() {
 
-  let message = 'Hello React.';
+  let message = 'React';
+  const isLoggedin = true;
+
+  if (isLoggedin) {
+    return <p>You Have Logged in.</p>
+  }
+
   return (
     <div className="App">
       <div>
-        {message} 
+        <p>Hello {isLoggedin ? message : 'World!'} </p>
+        <p>{ isLoggedin && 'Welcome to React'}</p>
       </div>
     </div>
   );
