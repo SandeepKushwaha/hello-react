@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
+  const currentTime = new Date().getHours();
+  let message = "";
+  let textColor = "";
+  let backgroundColor = "";
+
+  if (currentTime < 12) {
+    message = "Breakfast Time!";
+    textColor = "black";
+    backgroundColor = "yellow";
+  } else if (currentTime >= 12 && currentTime < 18) {
+    message = "Lunch Time!";
+    textColor = "blue";
+    backgroundColor = "pink";
+  } else {
+    message = "Dinner Time!";
+    textColor = "red";
+    backgroundColor = "black";
+  }
+
+  const styles = {
+    color: textColor,
+    backgroundColor: backgroundColor,
+    textAlign: "center",
+    padding: "20px",
+    fontSize: "24px",
+    fontWeight: "700",
+    borderRadius: "6px"
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello world!
+    <div>
+      <header>
+        <p className="page-title">
+          Hello World: <span className="project-name">Lunchtime</span>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <div style={styles}>{message}</div>
     </div>
   );
 }
