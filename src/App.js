@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+export default function App() {
+  function showAlert() {
+    alert('Hello React!');
+  }
 
-function App() {
+  function handleInputChange(e) {
+    console.log(e.target.value);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello world!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={showAlert}>Show Alert</button>
+      <input onChange={handleInputChange} />
     </div>
   );
 }
-
-export default App;
